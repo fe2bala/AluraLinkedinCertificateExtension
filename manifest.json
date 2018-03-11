@@ -1,0 +1,34 @@
+{
+    "manifest_version": 2,
+    "name": "Alura Linkedin Certificate",
+    "description": "Adiciona um certificado do Alura ao Linkedin",
+    "version": "1.0",
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://cursos.alura.com.br/user/*"
+            ],
+            "js": [
+                "jquery-3.3.1.min.js",
+                "certif.js"
+            ]
+        },
+        {
+            "matches": [
+                "https://www.linkedin.com/in/*/edit/certification/new/"
+            ],
+            "js": [
+                "jquery-3.3.1.min.js",
+                "linkedin.js"
+            ]
+        }
+    ],
+    "permissions": [
+        "activeTab",
+        "storage"
+    ]
+}
